@@ -1,0 +1,44 @@
+th.cart-header {
+   font-size: 16px;
+}
+
+span.product-name {
+   font-size: 16px;
+   font-weight: bold;
+}
+
+select.quantity-selector {
+   width: auto;
+   float: left;
+   margin: 5px 0px;
+}
+
+button.remove-product {
+   float: left;
+   margin: 5px 7px;
+}
+
+span.product-price {
+   color: darkgreen;
+}
+
+div.total {
+   font-weight: bold;
+}
+
+button.user-action {
+   margin: 5px 0px;
+}
+
+img.product-image:hover {
+   opacity: 0.8;
+}
+
+.panel-heading > h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    width: 75%;
+    padding-top: 6px;
+}

@@ -1,0 +1,34 @@
+.caption {
+    /*height: 110px;*/
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+img.thumbnail-image:hover {
+   opacity: 0.9;
+}
+
+select.quantity-selector {
+  width: auto;
+  display: inline;
+}
+
+h4.price {
+  color:green;
+  font-size: 16px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}

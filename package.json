@@ -1,0 +1,23 @@
+{
+  "name": "chilines",
+  "version": "1.0.0",
+  "description": "Chilines Management System",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/jginsburgn/chilines.git"
+  },
+  "keywords": [
+    "Chilines"
+  ],
+  "author": "Jonathan Ginsburg",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/jginsburgn/chilines#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

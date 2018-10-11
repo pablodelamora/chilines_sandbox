@@ -1,0 +1,16 @@
+select#sort-selector {
+   text-align: center;
+}
+
+input.search-bar {
+   margin: 15px 0px;
+   border-radius: 17px;
+}
+
+input.search-bar.ng-empty {
+   font-style: italic;
+}
+
+img.left-banner {
+   margin-bottom: 20px;
+}

@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/styles/shop/shop-index.css">
+<link rel="stylesheet" href="/styles/shop/product-thumbnail.css">
+<div class="row">
+   <div class="col-md-3">
+
+      <!-- <div class="list-group">
+         <a href="#" class="list-group-item">Category 3</a>
+      </div> -->
+      <div class="container-fluid">
+         <p class="lead">Chilines Shop</p>
+
+         <div class="form-group">
+            <label for="sort-selector">Ordenar por</label>
+            <select ng-model="sortOption" ng-options="sortOption.name for sortOption in sortOptions" class="form-control form-inline list-group-item" id="sort-selector">
+            </select>
+         </div>
+         <img class="img-responsive center-block img-rounded hidden-xs hidden-sm left-banner" src="http://placehold.it/300x900/97ff97/FFFFFF?text=Banner"/>
+      </div>
+   </div>
+
+   <div class="col-md-9">
+      <input ng-model="search.name" class="form-control search-bar" placeholder="Buscar...">
+      <div class="row">
+         <product-thumbnail ng-repeat="product in products | filter:search | orderBy:accessPropertyForSorting" product="product"></product-thumbnail>
+      </div>
+
+   </div>
+
+</div>

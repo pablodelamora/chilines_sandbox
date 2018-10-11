@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/styles/product/product-page.css">
+<link rel="stylesheet" href="/styles/product/review-panel.css">
+<div class="container-fluid">
+  <div class="row">
+    <div class="hidden-xs col-sm-1">
+      <a ng-repeat="image in product.images" ng-click="productCtrl.selectImage($index)">
+        <img ng-src="{{image}}" ng-class="{'product-thumbnail':$index!=selectedImage}" alt="{{image}}" class="img-responsive center-block"/>
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-6" ng-swipe-left="swipeLeft($event)" ng-swipe-right="swipeRight($event)">
+      <img src="{{product.images[selectedImage]}}" alt="{{product.images[selectedImage]}}" class="img-responsive center-block" />
+    </div>
+    <div class="col-xs-12 col-sm-5">
+      <span class="product-header">{{product.name}}</span>
+      <span ng-bind-html="sce.trustAsHtml(helper.starsHtml(product.averageStars().averageStars))" class="product-rating">
+      </span>
+      <small>({{product.averageStars().averageStars | number: 1}})</small>
+      <p class="text-justify">{{product.shortDescription}}</p>
+      <hr>
+      <p class="price">{{product.price | currency:"MXN$"}}</p>
+      <hr>
+      <div class="text-center">
+        <select ng-init="quantity=1" ng-model="quantity" ng-options="option for option in [1,2,3,4,5,6,7,8,9]" class="form-control quantity-selector"></select>
+        <button type="button" class="btn btn-success" ng-click="productCtrl.addItem()">
+          <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          Agregar {{quantity}} al Carrito
+        </button>
+      </div>
+      <hr>
+      <p class="text-justify">{{product.longDescription}}</p>
+    </div>
+  </div>
+  <hr class="reviews">
+  <div class="col-xs-12">
+    <h3 class="reviews">Reseñas</h3>
+  </div>
+  <review-panel ng-if="userFactory.loggedIn" review="{{myReview()}}" index="{{myReviewInd()}}" product-id="{{product.id}}"></review-panel>
+  <review-panel ng-repeat="review in product.reviews track by $index" ng-if="$index!=myReviewInd()" index="{{$index}}" review="{{review}}" product-id="{{product.id}}"></review-panel>
+</div>

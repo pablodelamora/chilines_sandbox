@@ -1,0 +1,8 @@
+ul.dropdown-menu > li.active > a > span {
+   background-color: white;
+   color: #337ab7;
+}
+
+span.right-breadth {
+   margin-right: 5px;
+}

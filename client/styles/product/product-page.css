@@ -1,0 +1,32 @@
+p.price {
+  color:green;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+select.quantity-selector {
+  width: auto;
+  display: inline;
+}
+
+span.product-rating{
+  font-size: 20px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+span.product-header {
+  font-size: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+img.product-thumbnail:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+img.product-thumbnail {
+  opacity: 0.5;
+}

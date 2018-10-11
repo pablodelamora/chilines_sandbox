@@ -1,0 +1,70 @@
+<form class="form-horizontal" >
+   <fieldset>
+      <!-- Form Name -->
+      <legend>Dirección de Envío</legend>
+
+      <!-- Recipient -->
+      <div class="form-group">
+         <label class="col-sm-2 control-label">Para</label>
+         <div class="col-sm-10">
+            <input ng-model="newAddressModel.recipient" placeholder="Nombre" class="form-control">
+         </div>
+      </div>
+
+      <!-- Street -->
+      <div class="form-group">
+         <label class="col-sm-2 control-label">Calle</label>
+         <div class="col-sm-10">
+            <input id="street-field" ng-model="newAddressModel.street" ng-model-options="{ updateOn: 'default blur' }" placeholder="Calle" class="form-control">
+         </div>
+      </div>
+
+      <!-- Internal and External Numbers -->
+      <div class="form-group">
+         <label class="col-sm-3 control-label">Número Exterior</label>
+         <div class="col-sm-3">
+            <input id="external-number-field" ng-model="newAddressModel.externalNumber" placeholder="Sin Número" class="form-control">
+         </div>
+
+         <label class="col-sm-3 control-label">Número Interior</label>
+         <div class="col-sm-3">
+            <input ng-model="newAddressModel.internalNumber" placeholder="Sin Número" class="form-control">
+         </div>
+      </div>
+
+      <!-- Country -->
+      <div class="form-group">
+         <label class="col-sm-2 control-label">País</label>
+         <div class="col-sm-10">
+            <input ng-model="newAddressModel.country" class="form-control" disabled="disabled">
+         </div>
+      </div>
+
+      <!-- State and County -->
+      <div class="form-group">
+         <label class="col-sm-2 control-label">Estado</label>
+         <div class="col-sm-4">
+            <input ng-model="newAddressModel.state" class="form-control">
+         </div>
+
+         <label class="col-sm-2 control-label">Delegación</label>
+         <div class="col-sm-4">
+            <input ng-model="newAddressModel.county" class="form-control">
+         </div>
+      </div>
+
+      <!-- Colony and Post Code -->
+      <div class="form-group">
+         <label class="col-sm-2 control-label">Colonia</label>
+         <div class="col-sm-4">
+            <input ng-model="newAddressModel.colony" class="form-control">
+         </div>
+
+         <label class="col-sm-2 control-label">Código Postal</label>
+         <div class="col-sm-4">
+            <input ng-model="newAddressModel.postalCode" class="form-control" placeholder="Código Postal">
+         </div>
+      </div>
+
+   </fieldset>
+</form>

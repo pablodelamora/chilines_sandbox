@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="styles/navigation/navigation.css">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Menú de Navegación</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="."><img src="./media/logo/logo-simple.png" alt="" class="logo img-responsive center-block"/></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li ng-class="{'active':position=='shop'}"><a href="#">Chilines</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" ng-class="{'active':dropdownActive()}">
+          <a id="dropdown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+             <span ng-if="uf.loggedIn" class="pull-left badge right-breadth">{{itemsInCart()}}</span>
+            {{greet}}
+            <i class="fa fa-user fa-fw" aria-hidden="true"></i>
+            <span class="caret"></span>
+          </a>
+          <!-- If user is not logged in -->
+          <ul ng-if="!uf.loggedIn" class="dropdown-menu">
+            <li ng-class="{'active':position=='signin'}">
+              <a href="#/signin">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                Ingresa
+              </a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">¿Nuevo?</li>
+            <li>
+              <a href="#">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+                Regístrate
+              </a>
+            </li>
+          </ul>
+          <!-- If user is not logged in -->
+          <ul ng-if="uf.loggedIn" class="dropdown-menu">
+            <li ng-class="{'active':position=='cart'}">
+              <a href="#/cart">
+                <i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i>
+                Carrito
+                <span class="pull-right badge">{{itemsInCart()}}</span>
+              </a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Compras</li>
+            <li>
+              <a href="#">
+                <i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>
+                Recurrentes
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-history fa-fw" aria-hidden="true"></i>
+                Historial
+              </a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Usuario</li>
+            <li>
+              <a href="#">
+                <i class="fa fa-cog fa-fw" aria-hidden="true"></i>
+                Ajustes
+              </a>
+            </li>
+            <li>
+              <a ng-click="navigationBarCtrl.logout()" class="clickable">
+                <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>
+                Salir
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>

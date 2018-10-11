@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="chilinesApp" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="author" content="Jonathan Ginsburg jgn1055@gmail.com">
+  <link rel="icon" href="./media/favicon/favicon.ico">
+
+  <title>Chilines</title>
+
+  <!-- jQuery Import -->
+  <script src="./vendor/jquery/jquery.min.js"></script>
+
+  <!-- Angular JS Import -->
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular/angular-route.js"></script>
+  <script src="vendor/angular/angular-local-storage.min.js"></script>
+  <script src="vendor/angular/angular-touch.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core JS -->
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendor/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <script src="vendor/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- App Scripts -->
+  <script src="scripts/main/app.js"></script>
+  <script src="scripts/main/config.js"></script>
+  <script src="scripts/main/general.js"></script>
+  <script src="scripts/shop/shop-controller.js"></script>
+  <script src="scripts/navigation/navigation-controller.js"></script>
+  <script src="scripts/services/user-factory.js"></script>
+  <script src="scripts/services/product-factory.js"></script>
+  <script src="scripts/services/notification-service.js"></script>
+  <script src="scripts/services/rules-factory.js"></script>
+  <script src="scripts/signin/sign-in.js"></script>
+  <script src="scripts/product/product-controller.js"></script>
+  <script src="scripts/product/review-panel-controller.js"></script>
+  <script src="scripts/services/helper.js"></script>
+  <script src="scripts/shop/product-thumbnail-controller.js"></script>
+  <script src="scripts/cart/cart.js"></script>
+  <script src="scripts/cart/item-row.js"></script>
+  <script src="scripts/addresschooser/address-chooser.js"></script>
+  <script src="scripts/addresschooser/address-widget.js"></script>
+  <script src="scripts/addresschooser/address-body.js"></script>
+
+  <!-- Custom styles for this template -->
+  <link href="styles/styling.css" rel="stylesheet">
+</head>
+<body ng-controller="indexController as indexCtrl">
+  <navigation-bar></navigation-bar>
+  <div class="container-fluid">
+    <ng-view></ng-view>
+  </div> <!-- /container -->
+  <footer id="footer">
+    <div class="container-fluid color-inherit">
+      <p class="text-muted color-inherit">
+        <span id="footerSpan"></span>
+      </p>
+    </div>
+  </footer>
+</body>
+
+<!-- Google Places API -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBFlM5OP7bQFxOIxjugoZhSvdVfZ7DzkA&libraries=places"></script>
+</html>

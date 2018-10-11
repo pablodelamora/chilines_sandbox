@@ -1,0 +1,33 @@
+span.review-panel-stars {
+  float: right;
+}
+
+span.review-panel-date {
+  font-size: 11px;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+select.star-selector {
+  height: 22px;
+  font-size: 12px;
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+h3.reviews {
+  font-weight: 200;
+}
+
+hr.reviews {
+  border-color: #717171;
+}
+
+button.review-panel-edit-button {
+  margin-top: 10px;
+}
+
+button.review-panel-erase-button {
+  margin-top: 10px;
+  margin-right: 5px;
+}

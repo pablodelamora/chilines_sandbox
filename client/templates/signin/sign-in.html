@@ -1,0 +1,31 @@
+<div ng-controller="signInController as signInCtrl" class="container col-sm-4 col-sm-offset-4">
+  <form name="signInForm" ng-submit="signInCtrl.login()">
+    <h2>Ingresa</h2>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <switch ng-switch="signInForm.email.$valid">
+          <se ng-switch-when="false"><i class="fa fa-times fa-fw notok" aria-hidden="true"></i></se>
+          <se ng-switch-when="true"><i class="fa fa-check fa-fw ok" aria-hidden="true"></i></se>
+        </switch>
+      </div>
+      <input ng-model="email" name="email" type="email" class="form-control" placeholder="Correo Electrónico" required autofocus>
+    </div>
+    <div class="breath">
+    </div>
+    <div class="input-group">
+      <div class="input-group-addon">
+        <switch ng-switch="signInForm.password.$valid">
+          <se ng-switch-when="false"><i class="fa fa-times fa-fw notok" aria-hidden="true"></i></se>
+          <se ng-switch-when="true"><i class="fa fa-check fa-fw ok" aria-hidden="true"></i></se>
+        </switch>
+      </div>
+      <input ng-model="password" name="password" type="password" class="form-control" placeholder="Contraseña" required>
+    </div>
+    <div class="breath">
+    </div>
+    <button type="submit" ng-disabled="!signInForm.$valid" class="btn btn-success center-block">Ingresa <i class="fa fa-refresh fa-spin"></i></button>
+  </form>
+  <div class="text-center">
+    <button ng-click="signInCtrl.forgotPassword()" class="btn btn-link" data-toggle="tooltip" title="Ingresa tu correo electrónico y has clic aquí." data-placement="bottom">¿Olvidaste tu contraseña?</button>
+  </div>
+</div> <!-- /container -->

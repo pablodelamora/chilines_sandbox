@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="styles/cart/cart.css">
+<div class="col-xs-12" ng-if="choosingAddress">
+   <address-chooser finished-choosing="cartCtrl.finishedChoosing(index)"></address-chooser>
+</div>
+<div class="col-xs-12" ng-if="!choosingAddress">
+   <div class="text-center">
+      <h3>Carrito</h3>
+   </div>
+   <hr>
+   <div class="text-center" ng-if="uf.user.cart.items.length == 0">
+      <button class="btn btn-default btn-lg" ng-click="cartCtrl.keepBuying()">
+         Tu carrito está vacío.
+         <br>
+         <i class="fa fa-cart-plus fa-5x" aria-hidden="true"></i>
+         <br>
+         ¡Vamos a comprar!
+      </button>
+   </div>
+   <div ng-if="uf.user.cart.items.length != 0">
+      <table class="table table-responsive">
+         <thead class="hidden-xs">
+            <tr>
+               <th class="cart-header">
+                  <span class="col-sm-5 table-title">Producto</span>
+                  <span class="col-sm-3 table-title">Cantidad</span>
+                  <span class="col-sm-4 table-title">Total</span>
+               </th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr ng-repeat="item in uf.user.cart.items" item-row item="item">
+            </tr>
+            <tr>
+               <td>
+                  <div class="col-xs-12 col-sm-5 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-2">
+                     <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <h2 class="panel-title pull-left">Destino de Pedido</h2>
+                           <button ng-click="cartCtrl.editAddress()" class="btn btn-default btn-sm pull-right">
+                              <i class="fa fa-pencil" aria-hidden="true" ng-if="addressIndex!=undefined"></i>
+                              <i class="fa fa-plus" aria-hidden="true" ng-if="addressIndex==undefined"></i>
+                           </button>
+                           <div class="clearfix"></div>
+                        </div>
+                       <div class="panel-body" ng-if="addressIndex!=undefined">
+                          <address-body address="uf.user.addresses[addressIndex]"></address-body>
+                       </div>
+                     </div>
+                  </div>
+                  <div>
+                     <div class="col-xs-6 col-xs-offset-1 col-sm-3 col-sm-offset-1">
+                        Subtotal
+                     </div>
+                     <div class="col-xs-5 col-sm-3">
+                        {{subtotal() | currency:"MXN$"}}
+                     </div>
+                  </div>
+                  <div>
+                     <div class="col-xs-6 col-xs-offset-1 col-sm-3 col-sm-offset-1">
+                        Costos de envío
+                     </div>
+                     <div class="col-xs-5 col-sm-3">
+                        {{shippingCost | currency:"MXN$"}}
+                     </div>
+                  </div>
+                  <div class="total">
+                     <div class="col-xs-6 col-xs-offset-1 col-sm-3 col-sm-offset-1">
+                        Total
+                     </div>
+                     <div class="col-xs-5 col-sm-3">
+                        {{grandTotal() | currency:"MXN$"}}
+                     </div>
+                  </div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="col-xs-12 text-center">
+         <button class="btn btn-default user-action" ng-click="cartCtrl.keepBuying()">Seguir Comprando</button>
+         <button class="btn btn-success user-action" ng-click="cartCtrl.checkout()">Pagar</button>
+      </div>
+   </div>
+</div>

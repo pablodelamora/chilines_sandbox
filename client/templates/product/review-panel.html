@@ -1,0 +1,21 @@
+<div class="col-xs-12 col-sm-4">
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      <span class="panel-title pull-left">
+        {{review.user.userName}}
+        <span class="review-panel-date">{{review.date | date:'MMMM d, y h:mm a'}}</span>
+      </span>
+      <span class="panel-title pull-right">
+        <span ng-bind-html="sce.trustAsHtml(helper.starsHtml(review.stars))" class="pull-right text-right"></span>
+        <select ng-if="editing" ng-model="review.stars" ng-options="star for star in [1,2,3,4,5]" class="form-control quantity-selector star-selector"></select>
+      </span>
+      <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+      <span ng-if="!editing">{{review.content}}</span>
+      <textarea ng-if="editing" ng-model="review.content"class="form-control" placeholder="Escribe tu reseña aquí..."></textarea>
+      <button ng-if="usersReview" ng-click="toggleEditing()" class="btn btn-warning pull-right review-panel-edit-button">{{editButtonText}}</button>
+      <button ng-if="usersReview && existed && !editing" ng-click="removeReview()" class="btn btn-danger pull-right review-panel-erase-button">Eliminar</button>
+    </div>
+  </div>
+</div>
